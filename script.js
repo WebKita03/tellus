@@ -107,12 +107,12 @@ window.onload = function checkCookies() {
                 console.log(user_data);
             }
             });
-        if (document.location.href != "main-page.html") 
+        if (!(document.location.href.includes("main-page.html")))
             document.location.href = "main-page.html"
     }
     else{
         console.log(document.location.href)
-        if (document.location.href != "login.html")
+        if (!document.location.href.includes("login.html"))
             document.location.href = "login.html"
     }
     
