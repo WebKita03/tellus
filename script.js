@@ -17,7 +17,7 @@ function login(){
                 document.location.href = "main-page.html";
                 break
             case false:
-                alert("Not logged in")
+                alert("Неправильное имя пользователя или пароль")
                 break
         }
     }
@@ -32,6 +32,18 @@ function register(){
     let phone = form['phone'].value
     let username = form['username'].value
     let password = form['password'].value
+    if (name == ""){
+        alert("Имя и фамилия не могут быть пустыми!")
+        return
+    }
+    if (username == ""){
+        alert("Логин не может быть пустым")
+        return
+    }
+    if (password == ""){
+        alert("Пароль не может быть пустым")
+        return
+    }
     $.ajax({
     url: 'http://klkvr.com:8080/register',
     type: 'POST',
@@ -48,6 +60,7 @@ function register(){
             case true:
                 document.cookie = "user="+username;
                 alert("Account registered")
+                document.location.href = "login.html"
                 break;
         }
     }
@@ -78,7 +91,6 @@ function change1() {
         });
     
 }
-
 window.onload = function checkCookies() {
     if (document.cookie.includes('user=')){
         let username = document.cookie
@@ -99,6 +111,7 @@ window.onload = function checkCookies() {
             document.location.href = "main-page.html"
     }
     else{
+        console.log(document.location.href)
         if (document.location.href != "login.html")
             document.location.href = "login.html"
     }
