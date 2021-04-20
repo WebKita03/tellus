@@ -17,7 +17,11 @@
 }
 
 .logo{
-  height: 26%
+  height:34%
+}
+
+#logo{
+  height: 21%;
 }
 
 .enter, .registration2{
@@ -25,10 +29,12 @@
   font-size: 1.8em;
   height: 4em
 }
-
+.enter{
+  padding-bottom: 10%;
+}
 .registration2{
   position: relative;
-  top: 5%;
+  bottom: 3%;
 }
 
 #login-form{
@@ -36,11 +42,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 90vh;
+  height: 82vh;
   width: 90vh;
   background-image: linear-gradient(75deg, rgb(76, 65, 139), rgb(56, 189, 56));
   border-radius: 60px;
-  padding-top: 10vh
+  padding-top: 10vh;
+  padding-bottom: 8vh;
 }
 
 
