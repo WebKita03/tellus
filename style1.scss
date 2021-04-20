@@ -109,13 +109,14 @@
         margin-right: 2.5%;
         transition: 0.5s ease-in;
     }
+    #real{
+        transition: 0.5s ease-in;
+    }
     #screen:hover, #real:hover{
         transition: 0.5s ease-in;
         text-shadow: 11px 17px red, -11px -17px blue;
     }
 }
-
-
 .text{
     align-self: center;
     position: relative;
@@ -141,7 +142,7 @@
     align-items: flex-start;
     justify-content: space-around;
     border-radius: 12.5%;
-    *:not(.text){
+    *:not(.text, .p){
         background-color: white;
         width: 34%;
         border-left: 20px solid;
@@ -149,5 +150,61 @@
         height: 20%;
         margin: 10px;
         border-radius: 40%;
+        cursor: pointer
+    }
+}
+.p{
+    display: none;
+    height: 5%;
+    margin-bottom: 20%;
+}
+ .pack2 {
+    animation: opacitys .5s;
+}
+@keyframes opacitys{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.container2{
+    animation: an 1.5s
+}
+@keyframes an{
+    0%{
+        opacity: 1
+    }
+    50%{
+        opacity: 0
+    }
+    100%{
+        opacity: 1
+    }
+}
+.p{
+    animation: anim .5s;
+}
+@keyframes anim {
+    0%{
+        opacity: 0
+    }
+    100%{
+        opacity: 1
+    }
+}
+.text2{
+    animation: anima 2s;
+}
+@keyframes anima{
+    0%{
+        opacity: 0
+    }
+    //50%{
+    //    opacity: 0;
+    //}
+    100%{
+        opacity: 1
     }
 }

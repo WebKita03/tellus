@@ -54,13 +54,12 @@ function register(){
     });
 }
 
+let text=document.getElementsByClassName('text')
 function change1() {
     let block1 =document.getElementsByClassName('block')
     block1[0].classList.add('b1');
     setTimeout(() => {
         block1[0].style.display='none'
-    }, 500);
-    setTimeout(() => {
         let block2=document.getElementsByClassName('b2');
         block2[0].classList.add('b22')
         block2[0].style.display='flex'
@@ -72,6 +71,7 @@ function change1() {
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
         success: function (data) {
+            text[0].innerHTML = data[0]['name']
             plans_list = data['result']
             console.log(plans_list)
         }
@@ -79,6 +79,7 @@ function change1() {
     
 }
 
+let p=document.getElementsByClassName('p');
 window.onload = function checkCookies() {
     if (document.cookie.includes('user=')){
         let username = document.cookie
@@ -92,6 +93,7 @@ window.onload = function checkCookies() {
             dataType: 'json',
             contentType: 'application/json; charset=utf-8',
             success: function (user_data) {
+                user_data['id']
                 console.log(user_data);
             }
             });
@@ -102,5 +104,40 @@ window.onload = function checkCookies() {
         if (document.location.href != "login.html")
             document.location.href = "login.html"
     }
-    
 }
+
+let container=document.getElementsByClassName('container');
+let pack=document.getElementsByClassName('pack');
+function showDetails(){
+    container[0].classList.add('container2');
+    for(let i=0;i<pack.length;i++){
+        pack[i].classList.add('pack2')
+    }
+    for(let i=0;i<p.length;i++){
+        p[i].classList.add('p2')
+    }
+    setTimeout(() => {
+        for(let i=0;i<pack.length;i++){
+            pack[i].style.display="none"
+        };
+        for(let i=0;i<p.length;i++){
+            p[i].style.display='block'
+        }
+        if(p[0].style.display=='block'){
+        //text[0].classList.add('text2')
+        //text[0].innerHTML= 'Описание пакета))';
+        }
+    }, 500);
+}
+
+function back(){
+    for(let i=0;i<p.length;i++){
+        p[i].style.display='none'
+    }
+    for(let i=0;i<pack.length;i++){
+        pack[i].style.display="block"
+    };
+    //text[0].innerHTML="Выберите пакет услуг)))"
+}
+
+pack[0].innerHTML='yuhjn'
