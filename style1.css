@@ -54,6 +54,7 @@
   background: rgba(144, 202, 144, 0.63);
   border: 3px solid rgba(85, 107, 47, 0.445);
   text-shadow: -2px 2px #ff6c6c;
+  position: relative;
 }
 
 .block * {
@@ -192,6 +193,13 @@
 .logo {
   height: 26%;
   width: 80%;
+}
+
+.log-out {
+  position: absolute;
+  left: 210px;
+  bottom: 150px;
+  text-shadow: none;
 }
 
 .container {

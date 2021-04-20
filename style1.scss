@@ -37,6 +37,7 @@
     background: rgba(144, 202, 144, 0.63);
     border: 3px solid rgba(85, 107, 47, 0.445);
     text-shadow: -2px 2px rgb(255, 108, 108);
+    position: relative;
 *{
     display: flex;
     justify-content: center;
@@ -124,7 +125,12 @@
     height: 26%;
     width: 80%;
 }
-
+.log-out{
+    position:absolute;
+    left: 210px;
+    bottom:150px;
+    text-shadow: none;
+}
 .container{
     background: red;
     width: 70vh;
