@@ -139,7 +139,7 @@ window.onload = function checkCookies() {
     }
     else{
         console.log(document.location.href)
-        if (!document.location.href.includes("login.html"))
+        if (!document.location.href.includes("login.html") && !document.location.href.includes("registration.html"))
             document.location.href = "login.html"
     }
 }
