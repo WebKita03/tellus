@@ -65,6 +65,42 @@ function change1() {
         block2[0].classList.add('b22')
         block2[0].style.display='flex'
     }, 500);
+    let plans_list = new Array()
+    $.ajax({
+        url: 'http://klkvr.com:8080/get_plans',
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        success: function (data) {
+            plans_list = data['result']
+            console.log(plans_list)
+        }
+        });
     
 }
 
+window.onload = function checkCookies() {
+    if (document.cookie.includes('user=')){
+        let username = document.cookie
+            .split('; ')
+            .find(row => row.startsWith('user='))
+            .split('=')[1];
+        $.ajax({
+            url: 'http://klkvr.com:8080/user_data',
+            type: 'POST',
+            data: JSON.stringify({"username": username}),
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            success: function (user_data) {
+                console.log(user_data);
+            }
+            });
+        if (document.location.href != "main-page.html") 
+            document.location.href = "main-page.html"
+    }
+    else{
+        if (document.location.href != "login.html")
+            document.location.href = "login.html"
+    }
+    
+}
