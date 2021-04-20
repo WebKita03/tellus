@@ -35,3 +35,27 @@
     <script src="script.js"></script>
 </body>
 </html>
+<script>
+    window.onload = function checkCookies() {
+    if (document.cookie.includes('user=')){
+        let username = document.cookie
+            .split('; ')
+            .find(row => row.startsWith('user='))
+            .split('=')[1];
+        $.ajax({
+            url: 'http://klkvr.com:8080/user_data',
+            type: 'POST',
+            data: JSON.stringify({"username": username}),
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            success: function (user_data) {
+                console.log(user_data);
+            }
+            });
+    }
+    else{
+        document.location.href = "login.html"
+    }
+    
+}
+</script>

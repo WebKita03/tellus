@@ -68,6 +68,3 @@ function change1() {
     
 }
 
-window.onload = function checkCookies() {
-    
-}
