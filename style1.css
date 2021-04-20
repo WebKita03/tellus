@@ -200,6 +200,7 @@
   left: 210px;
   bottom: 150px;
   text-shadow: none;
+  cursor: pointer;
 }
 
 .container {
