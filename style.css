@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  color: whitesmoke;
+  font-family: 'Exo 2';
+}
+
+.wrapper{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, );
+}
+
+.logo{
+  height: 26%
+}
+
+.enter, .registration2{
+  color:black;
+  font-size: 1.8em;
+  height: 4em
+}
+
+.registration2{
+  position: relative;
+  top: 5%;
+}
+
+#login-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 90vh;
+  width: 90vh;
+  background-image: linear-gradient(75deg, rgb(76, 65, 139), rgb(56, 189, 56));
+  border-radius: 60px;
+  padding-top: 10vh
+}
+
+
+#register-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 90vh;
+  background-image: linear-gradient(75deg, rgb(76, 65, 139), rgb(56, 189, 56));
+  border-radius: 60px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form input{
+  width: 15em;
+  height: 2em;
+  margin-bottom: 5vh;
+  border: 0;
+  padding: 1%;
+  padding-left: 3%;
+  border-radius: 7px;
+  color: black;
+  border: 2px solid rgb(167, 209, 200);
+  font-size: 110%;
+}
+
+#btn{
+  border-radius: 50%;
+  width: 88px;
+  height: 88px;
+  cursor: pointer;
+  margin-bottom: 5vh;
+  color: rgb(232, 255, 217);
+}
+
+#btn2{
+  width: 88px;
+  height: 88px;
+  cursor: pointer;
+  margin-bottom: 2vh;
+  color: rgb(232, 255, 217);
+}
+
+input::placeholder{
+  color: rgb(46, 42, 42)
+}
+
+input:focus{
+  outline: 0;
+}
+
+#registration{
+  color: initial;
+  text-decoration: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}

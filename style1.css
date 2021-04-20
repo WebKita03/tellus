@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Comfortaa', arial;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: linear-gradient(75deg, #ffaeae, #ffffaa);
+}
+
+.wrapper .bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.1;
+}
+
+.wrapper *:not(.bg) {
+  position: relative;
+}
+
+.block {
+  width: 73vh;
+  height: 87vh;
+  padding: 2vh;
+  padding-bottom: 3vh;
+  background-color: red;
+  border-radius: 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(144, 202, 144, 0.63);
+  border: 3px solid rgba(85, 107, 47, 0.445);
+  text-shadow: -2px 2px #ff6c6c;
+}
+
+.block * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.b1 {
+  -webkit-animation: opacity .5s;
+          animation: opacity .5s;
+}
+
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.b22 {
+  -webkit-animation: opacity2 .5s;
+          animation: opacity2 .5s;
+}
+
+@-webkit-keyframes opacity2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.logo {
+  height: 20%;
+}
+
+.choise {
+  height: 20%;
+  width: 96%;
+  margin-bottom: 2%;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: baseline;
+      -ms-flex-pack: baseline;
+          justify-content: baseline;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: radial-gradient(#f2c1f8, #efffdc, #d6d6ff);
+  border-radius: 1%;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.choise .decor {
+  -webkit-transform: skewX(-15deg);
+          transform: skewX(-15deg);
+  text-shadow: 8px 10px rgba(255, 80, 80, 0.616);
+  font-weight: bold;
+  color: #6b5353;
+}
+
+.variants {
+  width: 96%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 56%;
+}
+
+.variants * {
+  width: 90%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffededab), to(rgba(206, 206, 253, 0.788)));
+  background: linear-gradient(#ffededab, rgba(206, 206, 253, 0.788));
+  height: 100%;
+  border-radius: 15%;
+  cursor: pointer;
+  text-shadow: none;
+  font-style: italic;
+}
+
+.variants #screen {
+  margin-right: 2.5%;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+
+.variants #screen:hover, .variants #real:hover {
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+  text-shadow: 11px 17px red, -11px -17px blue;
+}
+
+.text {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  position: relative;
+  bottom: 2%;
+}
+
+.logo {
+  height: 26%;
+  width: 80%;
+}
+
+.container {
+  background: red;
+  width: 70vh;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 12.5%;
+}
+
+.container *:not(.text) {
+  background-color: white;
+  width: 34%;
+  border-left: 20px solid;
+  border-right: 20px solid;
+  height: 20%;
+  margin: 10px;
+  border-radius: 40%;
+}
+/*# sourceMappingURL=style1.css.map */
