@@ -36,7 +36,6 @@
     align-items: center;
     background: rgba(144, 202, 144, 0.63);
     border: 3px solid rgba(85, 107, 47, 0.445);
-    text-shadow: -2px 2px rgb(255, 108, 108);
     position: relative;
 *{
     display: flex;
@@ -142,7 +141,7 @@
     align-items: flex-start;
     justify-content: space-around;
     border-radius: 12.5%;
-    *:not(.text, .p){
+    .pack{
         background-color: white;
         width: 34%;
         border-left: 20px solid;
@@ -150,6 +149,24 @@
         height: 20%;
         margin: 10px;
         border-radius: 40%;
-        cursor: pointer
+        cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
     }
 }
+
+.pack img{
+    //position: absolute;
+    width: 60%;
+    height: 60%;
+    //left: 14%;
+}
+
+
+.center-text {
+    //position: absolute;
+    //right: 20%
+}
+

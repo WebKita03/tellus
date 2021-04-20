@@ -92,7 +92,13 @@ function change1() {
                 newPack.onclick = function() {
                     showDetails(j)
                 }
-                newPack.innerHTML = plans_list[i]['name']
+                let text = document.createElement('div')
+                text.innerHTML = plans_list[i]['name']
+                text.className = "center-text"
+                let img = document.createElement('img')
+                img.src = "icons/"+plans_list[i]['pic']
+                newPack.appendChild(img)
+                newPack.appendChild(text)
                 document.getElementById("packs-container").appendChild(newPack)
             }
         }
