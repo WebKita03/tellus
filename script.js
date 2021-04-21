@@ -157,17 +157,25 @@ function showDetails(id){
             plans_list = data['result']
             let plan = plans_list[id]
             let smellDiv = document.createElement("div")
-            let visualDiv = document.createElement("div")
+            let touchDiv = document.createElement("div")
             let soundDiv = document.createElement("div")
+            let pic = document.createElement("img")
+            pic.src = "icons/"+ plan["pic"]
+            pic.className = "details-picture"
+            let nameDiv = document.createElement("div")
+            nameDiv.innerHTML = plan["name"]
+            nameDiv.className = "p name"
             smellDiv.className = "p smell"
             smellDiv.innerHTML = plan["smell"]
-            visualDiv.className = "p visual"
-            visualDiv.innerHTML = plan["visual"]
+            touchDiv.className = "p touch"
+            touchDiv.innerHTML = plan["touch"]
             soundDiv.className = "p sound"
             soundDiv.innerHTML = plan["sound"]
             document.getElementById("options-container").appendChild(smellDiv)
             document.getElementById("options-container").appendChild(soundDiv)
-            document.getElementById("options-container").appendChild(visualDiv)
+            document.getElementById("options-container").appendChild(touchDiv)
+            document.getElementById("options-container").appendChild(pic)
+            document.getElementById("options-container").appendChild(nameDiv)
             document.getElementById("packs-container").style.display = "none"
             document.getElementById("options-container").style.display = "flex"
         }
@@ -187,23 +195,10 @@ document.body.onkeydown = function(event) {
     var e = event || window.event;
     var code = e.keyCode || e.which;
     var activeEl = document.activeElement.id;
-    if(code == 13 && activeEl == "registration-form") {
-        var text_redirect = document.getElementById('registration-form').value;
-        text_redirect = text_redirect.replace(/^\s+/, "");
-        if(text_redirect != "") {
-            register()
-        } else {
-            alert("ЗАПОЛНИТЕ ФОРМУ!");
-        }
-   }
+    if(code == 13 && activeEl == "registration-form")
+        register()
 
-   if(code == 13 && activeEl == "pass-word") {
-    var text_redirect = document.getElementById('pass-word').value;
-    text_redirect = text_redirect.replace(/^\s+/, "");
-    if(text_redirect != "") {
-        login()
-    } else {
-        alert("ЗАПОЛНИТЕ ФОРМУ!");
-    }
-}
+   if(code == 13 && activeEl == "pass-word") 
+    login()
+
 }
