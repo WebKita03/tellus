@@ -192,7 +192,6 @@ document.body.onkeydown = function(event) {
         text_redirect = text_redirect.replace(/^\s+/, "");
         if(text_redirect != "") {
             register()
-            document.getElementById('register-form-real').submit();
         } else {
             alert("ЗАПОЛНИТЕ ФОРМУ!");
         }
@@ -203,7 +202,6 @@ document.body.onkeydown = function(event) {
     text_redirect = text_redirect.replace(/^\s+/, "");
     if(text_redirect != "") {
         login()
-        document.getElementById('login-form-real').submit();
     } else {
         alert("ЗАПОЛНИТЕ ФОРМУ!");
     }
