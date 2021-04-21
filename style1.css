@@ -36,7 +36,6 @@
   height: 87vh;
   padding: 2vh;
   padding-bottom: 3vh;
-  background-color: red;
   border-radius: 8%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -208,7 +207,8 @@
 }
 
 .container {
-  background: red;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(177, 231, 245, 0.7)), to(rgba(233, 255, 154, 0.7)));
+  background: linear-gradient(to bottom, rgba(177, 231, 245, 0.7), rgba(233, 255, 154, 0.7));
   width: 70vh;
   height: 80vh;
   display: -webkit-box;
@@ -225,13 +225,12 @@
 }
 
 .container .pack {
-  background-color: white;
+  opacity: 0.8;
+  background: radial-gradient(rgba(255, 169, 144, 0.7), rgba(209, 169, 255, 0.719));
   width: 34%;
-  border-left: 20px solid;
-  border-right: 20px solid;
   height: 20%;
   margin: 10px;
-  border-radius: 40%;
+  border-radius: 30%;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -251,5 +250,126 @@
 .pack img {
   width: 60%;
   height: 60%;
+}
+
+.details-picture {
+  width: 80%;
+  height: 60%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#options-container {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(228, 214, 214, 0.74)), to(rgba(213, 247, 255, 0.7)));
+  background: linear-gradient(rgba(228, 214, 214, 0.74), rgba(213, 247, 255, 0.7));
+}
+
+#options-container * {
+  padding-left: 15px;
+}
+
+#panel {
+  padding: 0 2% 0 2%;
+  width: 94%;
+  position: absolute;
+  bottom: 6px;
+  height: 6%;
+}
+
+#panel * {
+  cursor: pointer;
+  width: 7%;
+}
+
+#panel .back {
+  float: left;
+}
+
+#panel .ok {
+  float: right;
+}
+
+#anim {
+  -webkit-animation: 1.5s opacit;
+          animation: 1.5s opacit;
+}
+
+@-webkit-keyframes opacit {
+  0% {
+    height: 100%;
+    display: -webkit-box;
+    display: flex;
+  }
+  100% {
+    display: none;
+    height: 0%;
+  }
+}
+
+@keyframes opacit {
+  0% {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  100% {
+    display: none;
+    height: 0%;
+  }
+}
+
+#very-good {
+  -webkit-animation: radius 1.5s;
+          animation: radius 1.5s;
+}
+
+@-webkit-keyframes radius {
+  0% {
+    width: 73vh;
+    height: 87vh;
+    border-radius: 8%;
+    background: rgba(144, 202, 144, 0.63);
+  }
+  100% {
+    background: url("relax.jpg");
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 50%;
+    width: 50vh;
+    height: 50vh;
+  }
+}
+
+@keyframes radius {
+  0% {
+    width: 73vh;
+    height: 87vh;
+    border-radius: 8%;
+    background: rgba(144, 202, 144, 0.63);
+  }
+  100% {
+    background: url("relax.jpg");
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 50%;
+    width: 50vh;
+    height: 50vh;
+  }
+}
+
+.el {
+  padding-bottom: 80%;
+  font-size: 2em;
 }
 /*# sourceMappingURL=style1.css.map */

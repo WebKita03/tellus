@@ -28,7 +28,6 @@
     height: 87vh;
     padding: 2vh;
     padding-bottom: 3vh;
-    background-color: red;
     border-radius: 8%;
     display: flex;
     flex-direction: column;
@@ -43,7 +42,6 @@
     align-items: center;
 }
 }
-
 .b1{
     animation: opacity .5s;
 }
@@ -133,7 +131,7 @@
     cursor: pointer
 }
 .container{
-    background: red;
+    background: linear-gradient(to bottom, rgba(177, 231, 245, 0.7), rgba(233, 255, 154, 0.7));
     width: 70vh;
     height: 80vh;
     display: flex;
@@ -142,30 +140,94 @@
     justify-content: space-around;
     border-radius: 12.5%;
     .pack{
-        background-color: white;
+        opacity: 0.8;
+        background: radial-gradient(rgba(255,169,144, 0.7), rgba(209, 169, 255, 0.719));
         width: 34%;
-        border-left: 20px solid;
-        border-right: 20px solid;
         height: 20%;
         margin: 10px;
-        border-radius: 40%;
+        border-radius: 30%;
         cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 }
 
 .pack img{
-    //position: absolute;
     width: 60%;
     height: 60%;
-    //left: 14%;
 }
 
+.details-picture{
+    width: 80%;
+    height: 60%;
+    align-self: center;
+}
 
-.center-text {
-    //position: absolute;
-    //right: 20%
+#options-container{
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(rgba(228, 214, 214, 0.74), rgba(213,247,255,0.7));
+    *{
+        padding-left: 15px;
+    }
+}
+
+#panel{
+    padding: 0 2% 0 2%;
+    width: 94%;
+    position: absolute;
+    bottom: 6px;
+    height: 6%;
+    *{
+        cursor: pointer;
+        width: 7%;
+    }
+.back{
+    float: left;
+}
+.ok{
+    float: right;
+}
+}
+
+#anim{
+        animation: 1.5s opacit;
+    @keyframes opacit {
+        0%{
+            height: 100%;
+            display: flex;
+        }
+        100%{
+            display: none;
+            height : 0%;
+        }
+    }
+}
+
+#very-good{
+    animation: radius 1.5s;
+    @keyframes radius{
+        0%{
+            width: 73vh;
+            height: 87vh;
+            border-radius: 8%;
+            background: rgba(144, 202, 144, 0.63);
+        }
+        100%{
+            background: url('relax.jpg');
+            background-position: center;
+            background-size: 100% 100%;
+            border-radius: 50%; 
+            width: 50vh;
+            height: 50vh;
+        }
+    }
+}
+
+.el{
+    padding-bottom: 80%;
+    font-size: 2em;
 }

@@ -79,7 +79,7 @@ function register(){
     });
 }
 
-let text=document.getElementsByClassName('text')
+let panel=document.getElementById('panel');
 function change1() {
     let block1 =document.getElementsByClassName('block')
     document.getElementById("options-container").style.display = "none"
@@ -90,8 +90,8 @@ function change1() {
         block2[0].classList.add('b22')
         block2[0].style.display='flex'
     }, 500);
-    let plans_list = new Array()
-    document.getElementById("head-packs").innerHTML = "Выберите пакет услуг"
+    let plans_list = new Array();
+    let panel=document.getElementById('panel');
     $.ajax({
         url: 'http://klkvr.com:8080/get_plans',
         type: 'POST',
@@ -100,11 +100,14 @@ function change1() {
         success: function (data) {
             plans_list = data['result']
             for (i = 0; i < plans_list.length; i++){
-                let newPack = document.createElement("div")
-                newPack.className = "pack"
+                let newPack = document.createElement("div");
+                newPack.className = "pack";
                 let j = i
                 newPack.onclick = function() {
-                    showDetails(j)
+                    showDetails(j);
+                    setTimeout(() => {
+                    panel.style.display='block';
+                    }, 300);
                 }
                 let text = document.createElement('div')
                 text.innerHTML = plans_list[i]['name']
@@ -120,7 +123,6 @@ function change1() {
     
 }
 
-let p=document.getElementsByClassName('p');
 window.onload = function checkCookies() {
     if (document.cookie.includes('user=')){
         let username = document.cookie
@@ -147,8 +149,6 @@ window.onload = function checkCookies() {
     }
 }
 
-let container=document.getElementsByClassName('container');
-let pack=document.getElementsByClassName('pack');
 function showDetails(id){
     $.ajax({
         url: 'http://klkvr.com:8080/get_plans',
@@ -176,18 +176,48 @@ function showDetails(id){
             document.getElementById("options-container").appendChild(touchDiv)
             document.getElementById("options-container").appendChild(pic)
             document.getElementById("packs-container").style.display = "none"
-            document.getElementById("options-container").style.display = "flex"
+            let c=document.getElementById("options-container");
+            c.style.display='flex';
+            let back=document.getElementsByClassName('back');
+            back[0].onclick= function() {
+                document.getElementById("packs-container").style.display = "flex";
+                document.getElementById("options-container").style.display = "none";
+                c.removeChild(smellDiv); c.removeChild(soundDiv); c.removeChild(touchDiv);
+                c.removeChild(pic); c.removeChild(nameDiv);  
+                document.getElementById('panel').style.display='none'
+            };
+            let ok=document.getElementsByClassName('ok')
+            ok[0].onclick=function() {
+                   c.id='anim';
+                   setTimeout(() => {
+                    c.style.display='none';
+                    document.getElementsByClassName('text')[0].style.display='none'
+                    document.getElementById('panel').style.display='none'
+                   }, 1400);
+                   setTimeout(() => {
+                    let good=document.getElementById('good')
+                    good.id='very-good';
+                    good.style.cssText ='border-radius: 50vh; width: 50vh; height: 50%; background-position: center; background-size: 100% 100%; background-image: url("relax.jpg")';
+                   }, 1500);
+                   setTimeout(() => {
+                       let good=document.getElementById('very-good')
+                       console.log("here")
+                       let el=document.createElement('div');
+                       el.className = 'el'
+                       good.appendChild(el);
+                       el.innerHTML='10';
+                       let timer=setInterval(() => {
+                           el.innerHTML--
+                           if(el.innerHTML==0){
+                               clearInterval(timer);
+                               alert('Ваша комната готова')
+                           }
+                       }, 1000);
+                   }, 3000);
+            }
+
         }
         });
-}
-
-function back(){
-    for(let i=0;i<p.length;i++){
-        p[i].style.display='none'
-    }
-    for(let i=0;i<pack.length;i++){
-        pack[i].style.display="block"
-    };
 }
 
 document.body.onkeydown = function(event) {
@@ -196,8 +226,7 @@ document.body.onkeydown = function(event) {
     var activeEl = document.activeElement.id;
     if(code == 13 && activeEl == "registration-form")
         register()
-
    if(code == 13 && activeEl == "pass-word") 
     login()
-
 }
+
