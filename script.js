@@ -182,3 +182,30 @@ function back(){
         pack[i].style.display="block"
     };
 }
+
+document.body.onkeydown = function(event) {
+    var e = event || window.event;
+    var code = e.keyCode || e.which;
+    var activeEl = document.activeElement.id;
+    if(code == 13 && activeEl == "registration-form") {
+        var text_redirect = document.getElementById('registration-form').value;
+        text_redirect = text_redirect.replace(/^\s+/, "");
+        if(text_redirect != "") {
+            register()
+            document.getElementById('register-form-real').submit();
+        } else {
+            alert("ЗАПОЛНИТЕ ФОРМУ!");
+        }
+   }
+
+   if(code == 13 && activeEl == "pass-word") {
+    var text_redirect = document.getElementById('pass-word').value;
+    text_redirect = text_redirect.replace(/^\s+/, "");
+    if(text_redirect != "") {
+        login()
+        document.getElementById('login-form-real').submit();
+    } else {
+        alert("ЗАПОЛНИТЕ ФОРМУ!");
+    }
+}
+}
