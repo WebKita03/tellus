@@ -192,3 +192,42 @@
     float: right;
 }
 }
+
+#anim{
+        animation: 1.5s opacit;
+    @keyframes opacit {
+        0%{
+            height: 100%;
+            display: flex;
+        }
+        100%{
+            display: none;
+            height : 0%;
+        }
+    }
+}
+
+#very-good{
+    animation: radius 1.5s;
+    @keyframes radius{
+        0%{
+            width: 73vh;
+            height: 87vh;
+            border-radius: 8%;
+            background: rgba(144, 202, 144, 0.63);
+        }
+        100%{
+            background: url('relax.jpg');
+            background-position: center;
+            background-size: 100% 100%;
+            border-radius: 50%; 
+            width: 50vh;
+            height: 50vh;
+        }
+    }
+}
+
+.el{
+    padding-bottom: 80%;
+    font-size: 2em;
+}
