@@ -82,6 +82,7 @@ function register(){
 let text=document.getElementsByClassName('text')
 function change1() {
     let block1 =document.getElementsByClassName('block')
+    document.getElementById("options-container").style.display = "none"
     block1[0].classList.add('b1');
     setTimeout(() => {
         block1[0].style.display='none'
@@ -90,6 +91,7 @@ function change1() {
         block2[0].style.display='flex'
     }, 500);
     let plans_list = new Array()
+    document.getElementById("head-packs").innerHTML = "Выберите пакет услуг"
     $.ajax({
         url: 'http://klkvr.com:8080/get_plans',
         type: 'POST',
@@ -160,11 +162,9 @@ function showDetails(id){
             let touchDiv = document.createElement("div")
             let soundDiv = document.createElement("div")
             let pic = document.createElement("img")
+            document.getElementById("head-packs").innerHTML = plan["name"]
             pic.src = "icons/"+ plan["pic"]
             pic.className = "details-picture"
-            let nameDiv = document.createElement("div")
-            nameDiv.innerHTML = plan["name"]
-            nameDiv.className = "p name"
             smellDiv.className = "p smell"
             smellDiv.innerHTML = plan["smell"]
             touchDiv.className = "p touch"
@@ -175,7 +175,6 @@ function showDetails(id){
             document.getElementById("options-container").appendChild(soundDiv)
             document.getElementById("options-container").appendChild(touchDiv)
             document.getElementById("options-container").appendChild(pic)
-            document.getElementById("options-container").appendChild(nameDiv)
             document.getElementById("packs-container").style.display = "none"
             document.getElementById("options-container").style.display = "flex"
         }
