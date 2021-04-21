@@ -17,11 +17,22 @@ function login(){
                 document.location.href = "main-page.html";
                 break
             case false:
-                alert("Not logged in")
+                alert("Неправильное имя пользователя или пароль")
                 break
         }
     }
     });
+}
+
+function logout(){
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
 }
 
 function register(){
@@ -32,6 +43,18 @@ function register(){
     let phone = form['phone'].value
     let username = form['username'].value
     let password = form['password'].value
+    if (name == ""){
+        alert("Имя и фамилия не могут быть пустыми!")
+        return
+    }
+    if (username == ""){
+        alert("Логин не может быть пустым")
+        return
+    }
+    if (password == ""){
+        alert("Пароль не может быть пустым")
+        return
+    }
     $.ajax({
     url: 'http://klkvr.com:8080/register',
     type: 'POST',
@@ -48,6 +71,7 @@ function register(){
             case true:
                 document.cookie = "user="+username;
                 alert("Account registered")
+                document.location.href = "login.html"
                 break;
         }
     }
@@ -71,9 +95,23 @@ function change1() {
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
         success: function (data) {
-            text[0].innerHTML = data[0]['name']
             plans_list = data['result']
-            console.log(plans_list)
+            for (i = 0; i < plans_list.length; i++){
+                let newPack = document.createElement("div")
+                newPack.className = "pack"
+                let j = i
+                newPack.onclick = function() {
+                    showDetails(j)
+                }
+                let text = document.createElement('div')
+                text.innerHTML = plans_list[i]['name']
+                text.className = "center-text"
+                let img = document.createElement('img')
+                img.src = "icons/"+plans_list[i]['pic']
+                newPack.appendChild(img)
+                newPack.appendChild(text)
+                document.getElementById("packs-container").appendChild(newPack)
+            }
         }
         });
     
@@ -94,27 +132,49 @@ window.onload = function checkCookies() {
             contentType: 'application/json; charset=utf-8',
             success: function (user_data) {
                 user_data['id']
-                console.log(user_data);
             }
             });
-        if (document.location.href != "main-page.html") 
+        if (!(document.location.href.includes("main-page.html")))
             document.location.href = "main-page.html"
     }
     else{
-        if (document.location.href != "login.html")
+        console.log(document.location.href)
+        if (!document.location.href.includes("login.html") && !document.location.href.includes("registration.html"))
             document.location.href = "login.html"
     }
 }
 
 let container=document.getElementsByClassName('container');
 let pack=document.getElementsByClassName('pack');
-function showDetails(){
+function showDetails(id){
+    $.ajax({
+        url: 'http://klkvr.com:8080/get_plans',
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        success: function (data) {
+            plans_list = data['result']
+            let plan = plans_list[id]
+            let smellDiv = document.createElement("div")
+            let visualDiv = document.createElement("div")
+            let soundDiv = document.createElement("div")
+            smellDiv.className = "p smell"
+            smellDiv.innerHTML = plan["smell"]
+            visualDiv.className = "p visual"
+            visualDiv.innerHTML = plan["visual"]
+            soundDiv.className = "p sound"
+            soundDiv.innerHTML = plan["sound"]
+            document.getElementById("options-container").appendChild(smellDiv)
+            document.getElementById("options-container").appendChild(soundDiv)
+            document.getElementById("options-container").appendChild(visualDiv)
+            document.getElementById("packs-container").style.display = "none"
+            document.getElementById("options-container").style.display = "flex"
+        }
+        });
+    /*onsole.log(id)
     container[0].classList.add('container2');
     for(let i=0;i<pack.length;i++){
         pack[i].classList.add('pack2')
-    }
-    for(let i=0;i<p.length;i++){
-        p[i].classList.add('p2')
     }
     setTimeout(() => {
         for(let i=0;i<pack.length;i++){
@@ -127,7 +187,7 @@ function showDetails(){
         //text[0].classList.add('text2')
         //text[0].innerHTML= 'Описание пакета))';
         }
-    }, 500);
+    }, 500);*/
 }
 
 function back(){
@@ -139,5 +199,3 @@ function back(){
     };
     //text[0].innerHTML="Выберите пакет услуг)))"
 }
-
-pack[0].innerHTML='yuhjn'

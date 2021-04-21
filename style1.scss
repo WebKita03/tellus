@@ -36,7 +36,6 @@
     align-items: center;
     background: rgba(144, 202, 144, 0.63);
     border: 3px solid rgba(85, 107, 47, 0.445);
-    text-shadow: -2px 2px rgb(255, 108, 108);
     position: relative;
 *{
     display: flex;
@@ -142,7 +141,7 @@
     align-items: flex-start;
     justify-content: space-around;
     border-radius: 12.5%;
-    *:not(.text, .p){
+    .pack{
         background-color: white;
         width: 34%;
         border-left: 20px solid;
@@ -150,68 +149,23 @@
         height: 20%;
         margin: 10px;
         border-radius: 40%;
-        cursor: pointer
-    }
-}
-.p{
-    display: none;
-    height: 5%;
-    margin-bottom: 20%;
-}
- .pack2 {
-    animation: opacitys .5s;
-}
-@keyframes opacitys{
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
-}
-.container2{
-    animation: an 1.5s
-}
-@keyframes an{
-    0%{
-        opacity: 1
-    }
-    50%{
-        opacity: 0
-    }
-    100%{
-        opacity: 1
-    }
-}
-.p{
-    animation: anim .5s;
-}
-@keyframes anim {
-    0%{
-        opacity: 0
-    }
-    100%{
-        opacity: 1
-    }
-}
-.text2{
-    animation: anima 2s;
-}
-@keyframes anima{
-    0%{
-        opacity: 0
-    }
-    //50%{
-    //    opacity: 0;
-    //}
-    100%{
-        opacity: 1
+        cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
     }
 }
 
-.l{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background: red
+.pack img{
+    //position: absolute;
+    width: 60%;
+    height: 60%;
+    //left: 14%;
+}
+
+
+.center-text {
+    //position: absolute;
+    //right: 20%
 }

@@ -53,7 +53,6 @@
           align-items: center;
   background: rgba(144, 202, 144, 0.63);
   border: 3px solid rgba(85, 107, 47, 0.445);
-  text-shadow: -2px 2px #ff6c6c;
   position: relative;
 }
 
@@ -225,7 +224,7 @@
   border-radius: 12.5%;
 }
 
-.container * {
+.container .pack {
   background-color: white;
   width: 34%;
   border-left: 20px solid;
@@ -234,109 +233,23 @@
   margin: 10px;
   border-radius: 40%;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.p {
-  display: none;
-  height: 5%;
-  margin-bottom: 20%;
-}
-
-.pack2 {
-  -webkit-animation: opacitys .5s;
-          animation: opacitys .5s;
-}
-
-@-webkit-keyframes opacitys {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes opacitys {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.container2 {
-  -webkit-animation: an 1.5s;
-          animation: an 1.5s;
-}
-
-@-webkit-keyframes an {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes an {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.p {
-  -webkit-animation: anim .5s;
-          animation: anim .5s;
-}
-
-@-webkit-keyframes anim {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes anim {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.text2 {
-  -webkit-animation: anima 2s;
-          animation: anima 2s;
-}
-
-@-webkit-keyframes anima {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes anima {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.pack img {
+  width: 60%;
+  height: 60%;
 }
 /*# sourceMappingURL=style1.css.map */
