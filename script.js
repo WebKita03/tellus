@@ -33,6 +33,8 @@ function logout(){
         var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
+    document.location.href = "login.html"
+    alert("Вы вышли из аккаунта")
 }
 
 function register(){
@@ -69,8 +71,7 @@ function register(){
         console.log(data)
         switch (data['result']){
             case true:
-                document.cookie = "user="+username;
-                alert("Account registered")
+                alert("Аккаунт зарегистрирован")
                 document.location.href = "login.html"
                 break;
         }
@@ -171,23 +172,6 @@ function showDetails(id){
             document.getElementById("options-container").style.display = "flex"
         }
         });
-    /*onsole.log(id)
-    container[0].classList.add('container2');
-    for(let i=0;i<pack.length;i++){
-        pack[i].classList.add('pack2')
-    }
-    setTimeout(() => {
-        for(let i=0;i<pack.length;i++){
-            pack[i].style.display="none"
-        };
-        for(let i=0;i<p.length;i++){
-            p[i].style.display='block'
-        }
-        if(p[0].style.display=='block'){
-        //text[0].classList.add('text2')
-        //text[0].innerHTML= 'Описание пакета))';
-        }
-    }, 500);*/
 }
 
 function back(){
@@ -197,5 +181,4 @@ function back(){
     for(let i=0;i<pack.length;i++){
         pack[i].style.display="block"
     };
-    //text[0].innerHTML="Выберите пакет услуг)))"
 }
