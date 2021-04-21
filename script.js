@@ -157,17 +157,17 @@ function showDetails(id){
             plans_list = data['result']
             let plan = plans_list[id]
             let smellDiv = document.createElement("div")
-            let visualDiv = document.createElement("div")
+            let touchDiv = document.createElement("div")
             let soundDiv = document.createElement("div")
             smellDiv.className = "p smell"
             smellDiv.innerHTML = plan["smell"]
-            visualDiv.className = "p visual"
-            visualDiv.innerHTML = plan["visual"]
+            touchDiv.className = "p touch"
+            touchDiv.innerHTML = plan["touch"]
             soundDiv.className = "p sound"
             soundDiv.innerHTML = plan["sound"]
             document.getElementById("options-container").appendChild(smellDiv)
             document.getElementById("options-container").appendChild(soundDiv)
-            document.getElementById("options-container").appendChild(visualDiv)
+            document.getElementById("options-container").appendChild(touchDiv)
             document.getElementById("packs-container").style.display = "none"
             document.getElementById("options-container").style.display = "flex"
         }
