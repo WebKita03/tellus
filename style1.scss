@@ -133,7 +133,7 @@
     cursor: pointer
 }
 .container{
-    background: red;
+    background: linear-gradient(to bottom, rgba(177, 231, 245, 0.7), rgba(233, 255, 154, 0.7));
     width: 70vh;
     height: 80vh;
     display: flex;
@@ -142,18 +142,17 @@
     justify-content: space-around;
     border-radius: 12.5%;
     .pack{
-        background-color: white;
+        opacity: 0.8;
+        background: radial-gradient(rgba(255,169,144, 0.7), rgba(209, 169, 255, 0.719));
         width: 34%;
-        border-left: 20px solid;
-        border-right: 20px solid;
         height: 20%;
         margin: 10px;
-        border-radius: 40%;
+        border-radius: 30%;
         cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 }
 
