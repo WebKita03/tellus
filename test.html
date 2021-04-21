@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1440 180"><path d="M0 43.418h288c96 0 192 0 288 26.7 96 26.3 192 80.3 288 69.3s192-85 288-117.3c96-31.7 192-21.7 240-16l48 5.3V180H0z" /></svg>
-</body>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>transition</title>
+  <style>
+   #bar {
+    top:-5.5em; right:5em; /* Положение */
+     padding: .5em; /* Поля */
+     margin: 0; /* Отступы */
+     position: absolute; /* Абсолютное позиционирование */
+     width: 2em; /* Ширина */
+     background: #333; /* Цвет фона */
+     color: #fff; /* Цвет текста */
+     text-align: center; /* Выравнивание по центру */
+     -webkit-transition: top 1s ease-out 0.5s;
+     -moz-transition: top 1s ease-out 0.5s;
+     -o-transition: top 1s ease-out 0.5s;
+     transition: top 1s ease-out 0.5s;
+    }
+   #bar:active { top: 0; }
+  </style>
+ </head>
+ <body>
+  <ul id="bar">
+   <li>1</li><li>2</li>
+   <li>3</li><li>4</li>
+   <li>&darr;</li>
+  </ul>
+ </body>
 </html>

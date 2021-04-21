@@ -36,7 +36,6 @@
   height: 87vh;
   padding: 2vh;
   padding-bottom: 3vh;
-  background-color: red;
   border-radius: 8%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -251,5 +250,52 @@
 .pack img {
   width: 60%;
   height: 60%;
+}
+
+.details-picture {
+  width: 80%;
+  height: 60%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#options-container {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(228, 214, 214, 0.74)), to(rgba(213, 247, 255, 0.7)));
+  background: linear-gradient(rgba(228, 214, 214, 0.74), rgba(213, 247, 255, 0.7));
+}
+
+#options-container * {
+  padding-left: 15px;
+}
+
+#panel {
+  padding: 0 2% 0 2%;
+  width: 94%;
+  position: absolute;
+  bottom: 6px;
+  height: 6%;
+}
+
+#panel * {
+  cursor: pointer;
+  width: 7%;
+}
+
+#panel .back {
+  float: left;
+}
+
+#panel .ok {
+  float: right;
 }
 /*# sourceMappingURL=style1.css.map */

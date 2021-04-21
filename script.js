@@ -79,7 +79,6 @@ function register(){
     });
 }
 
-let text=document.getElementsByClassName('text')
 function change1() {
     let block1 =document.getElementsByClassName('block')
     block1[0].classList.add('b1');
@@ -89,7 +88,8 @@ function change1() {
         block2[0].classList.add('b22')
         block2[0].style.display='flex'
     }, 500);
-    let plans_list = new Array()
+    let plans_list = new Array();
+    let panel=document.getElementById('panel')
     $.ajax({
         url: 'http://klkvr.com:8080/get_plans',
         type: 'POST',
@@ -102,7 +102,8 @@ function change1() {
                 newPack.className = "pack"
                 let j = i
                 newPack.onclick = function() {
-                    showDetails(j)
+                    showDetails(j);
+                    panel.style.display='block';
                 }
                 let text = document.createElement('div')
                 text.innerHTML = plans_list[i]['name']
@@ -118,7 +119,6 @@ function change1() {
     
 }
 
-let p=document.getElementsByClassName('p');
 window.onload = function checkCookies() {
     if (document.cookie.includes('user=')){
         let username = document.cookie
@@ -145,8 +145,6 @@ window.onload = function checkCookies() {
     }
 }
 
-let container=document.getElementsByClassName('container');
-let pack=document.getElementsByClassName('pack');
 function showDetails(id){
     $.ajax({
         url: 'http://klkvr.com:8080/get_plans',
@@ -177,18 +175,14 @@ function showDetails(id){
             document.getElementById("options-container").appendChild(pic)
             document.getElementById("options-container").appendChild(nameDiv)
             document.getElementById("packs-container").style.display = "none"
-            document.getElementById("options-container").style.display = "flex"
+            document.getElementById("options-container").style.display='flex';
         }
         });
 }
 
 function back(){
-    for(let i=0;i<p.length;i++){
-        p[i].style.display='none'
-    }
-    for(let i=0;i<pack.length;i++){
-        pack[i].style.display="block"
-    };
+    document.getElementById("packs-container").style.display = "flex";
+    document.getElementById("options-container").style.display = "none";
 }
 
 document.body.onkeydown = function(event) {
